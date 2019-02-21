@@ -2,11 +2,17 @@ var express = require('express')
 var router = express.Router();
 
 router.get('/', function (req, res) {
-    res.send('Get a list of sites!')
+    res.json({
+        items: [{
+            id: 'whatever'
+        }]
+    })
 })
 
 router.get('/:siteid', function (req, res) {
-    res.send('Get site by id: ' + req.params.siteid);
+    res.json({
+        id: req.params.siteid
+    })
 })
 
 module.exports = router;
